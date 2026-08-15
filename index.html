@@ -1,172 +1,534 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Prathamesh Purushottam Nehete - Python Developer and aspiring Cloud Engineer portfolio">
-  <title>Prathamesh Nehete | Python Developer & Cloud Engineer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prathamesh Nehete — Cloud Engineer &amp; Python Developer</title>
+  <meta name="description" content="Portfolio of Prathamesh Purushottam Nehete — B.Tech CSE student, Python developer, cloud engineer and web developer." />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="PN.png">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="progress" id="progress"></div>
-<div class="grid-bg"></div>
 
-<header class="navbar" id="navbar">
-  <a class="brand" href="#home"><span>PN</span> Prathamesh <span class="accent"></span></a>
-  <button class="menu-btn" id="menuBtn" aria-label="Open menu"><i></i><i></i><i></i></button>
-  <nav id="nav">
-    <a class="active" href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a>
-    <a href="#projects">Projects</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
-  </nav>
-</header>
+  <!-- Scroll progress bar -->
+  
 
-<main>
-<section class="hero section" id="home">
-  <div class="hero-copy reveal">
-    <div class="pill"><b></b> B.Tech CSE · Third Year · Building & Learning</div>
-    <p class="eyebrow">HELLO, I'M</p>
-    <h1>Prathamesh<br><em>Purushottam Nehete</em></h1>
-    <div class="typing">I am a <strong id="typed"></strong><span>|</span></div>
-    <p class="hero-text">A curious developer exploring Python, web development and cloud computing — turning ideas into practical projects while continuously improving.</p>
-    <div class="actions">
-      
-    <a href="#projects" class="btn primary">
-        Explore Projects ↓
-    </a>
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Prathamesh Nehete — home">
+        <img src="PN.png" alt="PN Logo" class="logo-image">
+        <span class="logo-text">PN</span>
+      </a>
 
-    <a href="Resume.pdf" class="btn secondary" target="_blank">
-        View Resume ↗
-    </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#internship" class="nav-link">Internship</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
 
-    <a href="Resume.pdf" class="btn secondary" download>
-        Download Resume ↓
-    </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
 
-</div>
-    <div class="socials">
-      <a href="https://github.com/Prathamesh13-n" target="_blank">GitHub ↗</a>
-      <a href="https://www.linkedin.com/in/prathamesh-nehete-41149a33b/" target="_blank">LinkedIn ↗</a>
-      <a href="mailto:prathameshnehete13@gmail.com">Email ↗</a>
-    </div>
-  </div>
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="hero">
+      <div class="grid-bg" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow--purple" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow--green" aria-hidden="true"></div>
 
-  <div class="hero-art reveal delay1">
-    <div class="orbit o1"></div><div class="orbit o2"></div>
+      <div class="hero-inner">
+        <div class="hero-visual reveal">
+    <div class="profile-orbit orbit-one"></div>
+    <div class="profile-orbit orbit-two"></div>
+
     <div class="profile-card">
-      <div class="photo">
-        <!-- Put your photo in this folder and name it profile.jpg -->
-        <img src="profile.png" alt="Prathamesh Nehete" onerror="this.style.display='none';document.querySelector('.fallback').style.display='grid'">
-        <div class="fallback">PN</div>
+        <div class="profile-image-wrap">
+            <img
+                src="profile.png"
+                alt="Prathamesh Purushottam Nehete"
+                class="profile-image"
+            />
+        </div>
+
+        <div class="profile-card-bottom">
+            <span>FOCUS</span>
+            <strong>Python + Cloud</strong>
+        </div>
+
+        <div class="profile-card-status">
+            <span>STATUS</span>
+            <strong>● Learning &amp; Building</strong>
+        </div>
+    </div>
+
+    <span class="floating-tech tech-python">Python</span>
+    <span class="floating-tech tech-cloud">☁ Cloud</span>
+    <span class="floating-tech tech-react">React</span>
+</div>
+
+        <div class="hero-visual reveal" aria-hidden="false">
+          <div class="terminal glass-card">
+            <div class="terminal-bar">
+              <span class="dot dot--red"></span>
+              <span class="dot dot--yellow"></span>
+              <span class="dot dot--green"></span>
+              <span class="terminal-title">prathamesh@portfolio ~ %</span>
+            </div>
+            <div class="terminal-body" id="terminalBody">
+              <p><span class="prompt">$</span> whoami</p>
+              <p class="terminal-output">Prathamesh Purushottam Nehete</p>
+              <p><span class="prompt">$</span> status --current</p>
+              <p class="terminal-output">Cloud Engineer · Python Developer · Web Developer</p>
+              <p><span class="prompt">$</span> education</p>
+              <p class="terminal-output">B.Tech CSE, MIT ADT University — Year 3</p>
+              <p class="terminal-cursor-line"><span class="prompt">$</span> <span class="blink-cursor">_</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-buttons reveal">
+          <a href="#projects" class="btn btn-primary">Explore Projects</a>
+          <a href="resume.pdf" target="_blank" rel="noopener" class="btn btn-secondary">View Resume</a>
+          <a href="resume.pdf" download class="btn btn-secondary">Download Resume</a>
+        </div>
       </div>
-      <div class="info"><span>FOCUS</span><b>Python + Cloud</b></div>
-      <div class="info"><span>STATUS</span><b class="green">● Learning & Building</b></div>
+
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ================= STATS ================= -->
+    <section class="stats" id="stats">
+      <div class="section-inner">
+        <div class="stats-grid">
+          <div class="stat-item reveal">
+            <div class="stat-number">26+</div>
+            <div class="stat-text">DSA Problems</div>
+            <div class="stat-platform">LeetCode</div>
+          </div>
+          <div class="stat-item reveal">
+            <div class="stat-number">4+</div>
+            <div class="stat-text">Projects</div>
+            <div class="stat-platform">Completed</div>
+          </div>
+          <div class="stat-item reveal">
+            <div class="stat-number">8.57</div>
+            <div class="stat-text">CGPA</div>
+            <div class="stat-platform">Academic</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="about" id="about">
+      <div class="section-inner">
+        <p class="section-eyebrow reveal">About</p>
+        <h2 class="section-title reveal">A bit about my journey so far</h2>
+
+        <div class="about-grid">
+          <p class="about-text reveal">
+            I'm a third-year B.Tech Computer Science Engineering student at MIT ADT University,
+            genuinely interested in how software is built and deployed at scale. My focus areas
+            are Python development, practical web applications, and cloud computing — I like
+            understanding not just how to write code, but how it runs reliably in production.
+            Alongside coursework, I work on personal and academic projects to apply what I learn,
+            and I completed a short web development internship building a real-world clone project.
+            I'm still early in my journey, and I approach every project as a chance to get better
+            at writing clean code and thinking like an engineer.
+          </p>
+
+          <div class="about-stats">
+            <div class="stat-card reveal">
+              <span class="stat-icon">🎓</span>
+              <span class="stat-value">B.Tech</span>
+              <span class="stat-label">Computer Science Engineering</span>
+            </div>
+            <div class="stat-card reveal">
+              <span class="stat-icon">📚</span>
+              <span class="stat-value">3rd Year</span>
+              <span class="stat-label">MIT ADT University</span>
+            </div>
+            <div class="stat-card reveal">
+              <span class="stat-icon">🧩</span>
+              <span class="stat-value">Multiple</span>
+              <span class="stat-label">Academic &amp; Personal Projects</span>
+            </div>
+            <div class="stat-card reveal">
+              <span class="stat-icon">💼</span>
+              <span class="stat-value">Internship</span>
+              <span class="stat-label">Web Development Experience</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section class="skills" id="skills">
+      <div class="section-inner">
+        <p class="section-eyebrow reveal">Skills</p>
+        <h2 class="section-title reveal">Tools &amp; technologies I work with</h2>
+        <p class="section-sub reveal">Proficiency levels are honest snapshots of where I am right now, not a finished state.</p>
+
+        <div class="skills-grid" id="skillsGrid">
+          <!-- Skill cards injected/enhanced by script.js also present statically for no-JS fallback -->
+          <div class="skill-card reveal" data-level="70">
+            <div class="skill-head">
+              <span class="skill-name">Python</span>
+              <span class="skill-tag">Intermediate</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar-fill"></div></div>
+          </div>
+
+          <div class="skill-card reveal" data-level="75">
+            <div class="skill-head">
+              <span class="skill-name">HTML</span>
+              <span class="skill-tag">Intermediate</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar-fill"></div></div>
+          </div>
+
+          <div class="skill-card reveal" data-level="65">
+            <div class="skill-head">
+              <span class="skill-name">CSS</span>
+              <span class="skill-tag">Intermediate</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar-fill"></div></div>
+          </div>
+
+          <div class="skill-card reveal" data-level="55">
+            <div class="skill-head">
+              <span class="skill-name">JavaScript</span>
+              <span class="skill-tag">Familiar</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar-fill"></div></div>
+          </div>
+
+          <div class="skill-card reveal" data-level="60">
+            <div class="skill-head">
+              <span class="skill-name">SQL</span>
+              <span class="skill-tag">Familiar</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar-fill"></div></div>
+          </div>
+
+          <div class="skill-card reveal" data-level="45">
+            <div class="skill-head">
+              <span class="skill-name">React</span>
+              <span class="skill-tag">Learning</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar-fill"></div></div>
+          </div>
+
+          <div class="skill-card reveal" data-level="40">
+            <div class="skill-head">
+              <span class="skill-name">Docker</span>
+              <span class="skill-tag">Learning</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar-fill"></div></div>
+          </div>
+
+          <div class="skill-card reveal" data-level="50">
+            <div class="skill-head">
+              <span class="skill-name">Cloud Computing</span>
+              <span class="skill-tag">Learning</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar-fill"></div></div>
+          </div>
+
+          <div class="skill-card reveal" data-level="70">
+            <div class="skill-head">
+              <span class="skill-name">Git / GitHub</span>
+              <span class="skill-tag">Intermediate</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar-fill"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section class="projects" id="projects">
+      <div class="section-inner">
+        <p class="section-eyebrow reveal">Projects</p>
+        <h2 class="section-title reveal">Things I've built &amp; things I'm building</h2>
+        <p class="section-sub reveal">A mix of software, hardware and AI-driven projects from coursework and personal exploration.</p>
+
+        <div class="projects-grid">
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <span class="project-number">01</span>
+            </div>
+            <h3 class="project-name">Online Library Management System</h3>
+            <p class="project-desc">A system for managing a library's book inventory, issuing and returns, built to practice core backend logic and data handling.</p>
+            <div class="chip-row">
+              <span class="chip">Python</span>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-small btn-small--outline" aria-label="View source code (link not yet available)">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <span class="project-number">02</span>
+            </div>
+            <h3 class="project-name">Fake Note Detector</h3>
+            <p class="project-desc">A hardware-based project using Raspberry Pi to detect counterfeit currency notes, combining electronics with applied logic.</p>
+            <div class="chip-row">
+              <span class="chip">Raspberry Pi</span>
+              <span class="chip">Hardware</span>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-small btn-small--outline" aria-label="View source code (link not yet available)">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <span class="project-number">03</span>
+            </div>
+            <h3 class="project-name">AI Suitable Agricultural Drone</h3>
+            <p class="project-desc">A drone concept designed with AI-assisted capabilities aimed at supporting agricultural monitoring tasks.</p>
+            <div class="chip-row">
+              <span class="chip">AI</span>
+              <span class="chip">Drone</span>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-small btn-small--outline" aria-label="View source code (link not yet available)">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <span class="project-number">04</span>
+            </div>
+            <h3 class="project-name">Pothole Detection Software</h3>
+            <p class="project-desc">A computer vision-based project exploring road surface analysis to identify potholes from image/video input.</p>
+            <div class="chip-row">
+              <span class="chip">AI</span>
+              <span class="chip">Computer Vision</span>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-small btn-small--outline" aria-label="View source code (link not yet available)">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <span class="project-number">05</span>
+            </div>
+            <h3 class="project-name">Smart Parking System</h3>
+            <p class="project-desc">An IoT and software-driven solution concept for detecting available parking spots and managing occupancy.</p>
+            <div class="chip-row">
+              <span class="chip">IoT</span>
+              <span class="chip">Software</span>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-small btn-small--outline" aria-label="View source code (link not yet available)">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card project-card--progress reveal">
+            <div class="project-top">
+              <span class="project-number">06</span>
+              <span class="badge badge--progress">In Progress</span>
+            </div>
+            <h3 class="project-name">College Marketing Dashboard</h3>
+            <p class="project-desc">A dashboard currently in development to visualize and track marketing-related data for the college, containerized with Docker.</p>
+            <div class="chip-row">
+              <span class="chip">Docker</span>
+              <span class="chip">Dashboard</span>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-small btn-small--outline" aria-label="View source code (link not yet available)">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card project-card--progress reveal">
+            <div class="project-top">
+              <span class="project-number">07</span>
+              <span class="badge badge--progress">In Progress</span>
+            </div>
+            <h3 class="project-name">Cloud Provider Portal Automation</h3>
+            <p class="project-desc">An ongoing project focused on automating repetitive tasks within a cloud provider portal to streamline workflows.</p>
+            <div class="chip-row">
+              <span class="chip">Cloud</span>
+              <span class="chip">Automation</span>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-small btn-small--outline" aria-label="View source code (link not yet available)">GitHub</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= INTERNSHIP ================= -->
+    <section class="internship" id="internship">
+      <div class="section-inner">
+        <p class="section-eyebrow reveal">Experience</p>
+        <h2 class="section-title reveal">Internship</h2>
+
+        <div class="internship-card glass-card reveal">
+          <div class="internship-head">
+            <div>
+              <h3 class="internship-role">Web Development Intern</h3>
+              <p class="internship-company">Elevance Skill</p>
+            </div>
+            <span class="internship-duration">1 Month</span>
+          </div>
+
+          <p class="internship-desc">
+            During this internship, I worked on <strong>BookMySeat Clone</strong>, a web development
+            project focused on rebuilding a seat/ticket booking style interface. The internship
+            gave me hands-on exposure to structuring a front-end project and translating a
+            reference design into working code.
+          </p>
+
+          <a href="https://github.com/Prathamesh13-n/Bookmyseat-clone" target="_blank" rel="noopener" class="btn btn-primary btn-small-height">
+            View Project
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SOCIAL LINKS ================= -->
+    <section class="social-links" id="social-links">
+      <div class="section-inner">
+        <div class="social-icons-container">
+          <a href="https://github.com/Prathamesh13-n" target="_blank" rel="noopener" class="social-icon-item social-github reveal" aria-label="GitHub">
+            <div class="social-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77A5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+            </div>
+            <span class="social-label">GitHub</span>
+            <span class="social-desc">View my code</span>
+          </a>
+
+          <a href="https://leetcode.com/u/xPgkLs96Js/" target="_blank" rel="noopener" class="social-icon-item social-leetcode reveal" aria-label="LeetCode">
+            <div class="social-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M13.483 0a1.374 1.374 0 00-.461.047A1.734 1.734 0 0012 1.69v6.29h6.56a1.686 1.686 0 100-3.373H12V1.388a1.38 1.38 0 00-1.379-1.383zm-10.020 19.393l.589.589a1.373 1.373 0 001.942 0l8.117-8.117a1.373 1.373 0 000-1.943l-8.117-8.117a1.373 1.373 0 00-1.942 0l-.589.589a1.373 1.373 0 000 1.943L10.263 12l-6.800 6.800a1.373 1.373 0 000 1.943z"/>
+              </svg>
+            </div>
+            <span class="social-label">LeetCode</span>
+            <span class="social-desc">Problem solving</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/prathamesh-nehete-41149a33b/" target="_blank" rel="noopener" class="social-icon-item social-linkedin reveal" aria-label="LinkedIn">
+            <div class="social-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </div>
+            <span class="social-label">LinkedIn</span>
+            <span class="social-desc">Professional profile</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EDUCATION ================= -->
+    <section class="education" id="education">
+      <div class="section-inner">
+        <p class="section-eyebrow reveal">Education</p>
+        <h2 class="section-title reveal">Academic background</h2>
+
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glass-card">
+              <span class="timeline-status">In Progress · Year 3</span>
+              <h3 class="timeline-title">B.Tech, Computer Science Engineering</h3>
+              <p class="timeline-place">MIT ADT University</p>
+              <p class="timeline-desc">Currently in my third year, building a strong foundation in
+                programming, data structures, databases, and systems concepts, while applying them
+                through independent and academic projects.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CERTIFICATIONS PREVIEW ================= -->
+    <section class="cert-preview" id="certifications">
+      <div class="section-inner cert-preview-inner">
+        <div>
+          <p class="section-eyebrow reveal">Certifications</p>
+          <h2 class="section-title reveal">Continuous learning, documented</h2>
+          <p class="section-sub reveal">A growing collection of courses and certifications I've completed, kept on a dedicated page.</p>
+        </div>
+        <a href="certifications.html" class="btn btn-outline cert-link reveal">
+          View Certificates <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="contact" id="contact">
+      <div class="section-inner">
+        <p class="section-eyebrow reveal">Contact</p>
+        <h2 class="section-title reveal">Let's build something useful together.</h2>
+        <p class="section-sub reveal">Have a project, internship or opportunity in mind? I'd love to hear from you.</p>
+
+        <div class="contact-grid">
+          <a href="mailto:prathameshnehete13@gmail.com" class="contact-card glass-card reveal">
+            <span class="contact-icon">✉️</span>
+            <span class="contact-label">Email</span>
+            <span class="contact-value">prathameshnehete13@gmail.com</span>
+          </a>
+
+          <a href="https://github.com/Prathamesh13-n" target="_blank" rel="noopener" class="contact-card glass-card reveal">
+            <span class="contact-icon">🐙</span>
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">Prathamesh13-n</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/prathamesh-nehete-41149a33b/" target="_blank" rel="noopener" class="contact-card glass-card reveal">
+            <span class="contact-icon">💼</span>
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">prathamesh-nehete</span>
+          </a>
+
+          <a href="https://wa.me/919970210621" class="contact-card glass-card reveal" id="whatsappLink" target="_blank" rel="noopener">
+            <span class="contact-icon">📱</span>
+            <span class="contact-label">WhatsApp</span>
+            <span class="contact-value">9970210621</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="section-inner footer-inner" style="text-align: center;">
+      <p class="footer-copy">© <span id="year"></span> Prathamesh Purushottam Nehete</p>
     </div>
-    <span class="tag python">Python</span><span class="tag cloud">☁ Cloud</span><span class="tag react">React</span>
-  </div>
-</section>
+  </footer>
 
-<section class="section" id="about">
-  <div class="heading reveal"><small>01 / ABOUT</small><h2>More than a student.<br><em>A builder in progress.</em></h2></div>
-  <div class="about-grid">
-    <div class="about-copy reveal">
-      <p class="lead">I am a B.Tech Computer Science & Engineering student at MIT ADT University, currently in my third year.</p>
-      <p>I enjoy learning by building. My interests span Python development, web technologies, databases and cloud computing. From a library management system to Raspberry Pi hardware and cloud-focused projects, I like turning concepts into something practical.</p>
-      <p>My current direction is toward becoming a <b>Cloud Engineer</b> and <b>Python Developer</b>, while strengthening my foundations in modern web development and deployment technologies.</p>
-    </div>
-    <div class="stats reveal delay1">
-      <div><b>3rd</b><span>Year of B.Tech</span></div><div><b>7+</b><span>Projects</span></div>
-      <div><b>2</b><span>Career Focus Areas</span></div><div><b>∞</b><span>Things to Learn</span></div>
-    </div>
-  </div>
-</section>
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
-<section class="section" id="skills">
-  <div class="heading reveal"><small>02 / SKILLS</small><h2>Tools I use.<br><em>Technologies I'm growing with.</em></h2></div>
-  <div class="skills-grid">
-    <div class="skill-list reveal">
-      <article class="skill featured"><strong>Py</strong><div><h3>Python</h3><p>Core development · problem solving · project building</p></div><label>Learning</label></article>
-      <article class="skill"><strong>HT</strong><div><h3>HTML</h3><p>Semantic structure and accessible pages</p></div></article>
-      <article class="skill"><strong>CS</strong><div><h3>CSS</h3><p>Responsive layouts and modern UI</p></div></article>
-      <article class="skill"><strong>JS</strong><div><h3>JavaScript</h3><p>Interactive web experiences</p></div></article>
-      <article class="skill"><strong>SQL</strong><div><h3>SQL</h3><p>Working with structured data</p></div></article>
-      <article class="skill"><strong>R</strong><div><h3>React</h3><p>Currently learning component-based development</p></div></article>
-    </div>
-    <aside class="learning reveal delay1">
-      <small>CURRENTLY LEARNING</small><h3>Building the next version of myself.</h3>
-      <p><span>01</span> React <b>→</b></p><p><span>02</span> Cloud Computing <b>→</b></p>
-      <p><span>03</span> JavaScript <b>→</b></p><p><span>04</span> Web Development <b>→</b></p>
-    </aside>
-  </div>
-</section>
-
-<section class="section" id="projects">
-  <div class="heading projects-head reveal"><div><small>03 / PROJECTS</small><h2>Things I've <em>built.</em></h2></div><p>Software, hardware and cloud-focused work.</p></div>
-  <div class="projects">
-    <article class="project big reveal"><div class="project-top">01 <span>PYTHON</span></div><div class="visual v1"><label>LIBRARY</label><b>01</b></div><div class="body"><h3>Online Library Management System</h3><p>A Python-based system for managing library operations and records.</p><div class="chips"><i>Python</i><i>Management System</i></div></div></article>
-    <article class="project reveal delay1"><div class="project-top">02 <span>HARDWARE</span></div><div class="visual v2"><label>RASPBERRY PI</label><b>₹?</b></div><div class="body"><h3>Fake Note Detector</h3><p>Hardware-based project using Raspberry Pi to detect counterfeit currency.</p><div class="chips"><i>Raspberry Pi</i><i>Hardware</i></div></div></article>
-    <article class="project reveal delay2"><div class="project-top">03 <span>AI / HARDWARE</span></div><div class="visual v3"><label>DRONE</label><b>AI</b></div><div class="body"><h3>AI + sustainable energy in agriculture  techchonlgy .</h3><p>An artificial drone project exploring AI-oriented possibilities and automation.</p><div class="chips"><i>AI</i><i>Drone</i></div></div></article>
-    <article class="project reveal"><div class="project-top">04 <span>SOFTWARE</span></div><div class="visual v4"><label>DETECTION</label><b>↘</b></div><div class="body"><h3>Pothole Detection Software</h3><p>Software focused on identifying potholes and supporting road-safety use cases.</p><div class="chips"><i>Software</i><i>Detection</i></div></div></article>
-    <article class="project reveal delay1"><div class="project-top">05 <span>SYSTEM</span></div><div class="visual v5"><label>PARKING</label><b>P</b></div><div class="body"><h3>Smart Parking System</h3><p>A smart-system concept designed to improve parking management and user experience.</p><div class="chips"><i>Smart System</i><i>Automation</i></div></div></article>
-    <article class="project current reveal delay2"><div class="project-top">06 <span>IN PROGRESS</span></div><div class="visual v6"><label>DOCKER</label><b>◆</b></div><div class="body"><h3>College Marking Dashboard</h3><p> A dashboard project designed to manage and visualize
-            college marketing data and activities..</p><div class="chips"><i>Docker</i><i>Dashboard</i><i>In Progress</i></div></div></article>
-    <article class="project current reveal"><div class="project-top">07 <span>IN PROGRESS</span></div><div class="visual v7"><label>CLOUD</label><b>☁</b></div><div class="body"><h3>Automation Cloud Provider Portal</h3><p>Currently working on a cloud provider portal focused on automation and cloud workflows.</p><div class="chips"><i>Cloud</i><i>Automation</i><i>In Progress</i></div></div></article>
-  </div>
-</section>
-
-<section class="section" id="journey">
-  <div class="heading reveal"><small>04 / MY JOURNEY</small><h2>Learning by <em>doing.</em></h2></div>
-  <div class="timeline">
-    <article class="item reveal"><b>01</b><div><small>FOUNDATION</small><h3>Started exploring programming</h3><p>Built a foundation in programming and began working with Python and problem solving.</p></div></article>
-    <article class="item reveal delay1"><b>02</b><div><small>PROJECTS</small><h3>Started building practical projects</h3><p>Moved from learning concepts to creating software, hardware and automation-oriented projects.</p></div></article>
-    <article class="item reveal delay2"><b>03</b><div><small>NOW · TY</small><h3>Third year — expanding into cloud</h3><p>Currently strengthening web skills while learning React, cloud computing and Docker through projects.</p></div></article>
-    <article class="item future reveal"><b>04</b><div><small>NEXT</small><h3>Cloud Engineer + Python Developer</h3><p>Build stronger production-ready skills, deploy more projects and move toward a professional software career.</p></div></article>
-  </div>
-</section>
-
-<section class="section">
-  <div class="education reveal"><div><small>05 / EDUCATION</small><h2>B.Tech CSE</h2><h3>MIT ADT University</h3><p>Computer Science & Engineering · Third Year · Currently Pursuing</p></div><strong>TY<small>2026</small></strong></div>
-</section>
-
-<section class="section">
-  <a href="certifications.html" class="btn primary">
-    View Certificates ↗
-</a>
-</section>
-<section class="section">
-  <a href="">internship</a>
-
-</section>
-
-<section class="section contact" id="contact">
-  <div class="contact-box reveal">
-    <div><small>07 / CONTACT</small><h2>Let's build something<br><em>useful together.</em></h2><p>Have an idea, project, internship opportunity or simply want to connect? Reach out.</p></div>
-    <div class="contact-links">
-      <a href="mailto:prathameshnehete13@gmail.com"><span>Email</span><b>prathameshnehete13@gmail.com ↗</b></a>
-      <a href="https://github.com/Prathamesh13-n" target="_blank"><span>GitHub</span><b>@Prathamesh13-n ↗</b></a>
-      <a href="https://www.linkedin.com/in/prathamesh-nehete-41149a33b/" target="_blank"><span>LinkedIn</span><b>Prathamesh Nehete ↗</b></a>
-      <div><span>Phone</span><b>+91 9970210621</b></div>
-      <a
-    href="https://wa.me/919970210621"
-    target="_blank"
-    rel="noopener noreferrer"
->
-    <span>WhatsApp</span>
-
-    <b>
-        Chat with me on WhatsApp ↗
-    </b>
-</a>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer><span>© <b id="year"></b> Prathamesh Purushottam Nehete</span><span>Designed & built with curiosity.</span></footer>
-<button class="top" id="top">↑</button>
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
