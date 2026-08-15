@@ -1,342 +1,230 @@
-/* ================= TYPING ANIMATION ================= */
+/* =========================================================
+   Prathamesh Nehete — Portfolio
+   script.js
+   ========================================================= */
 
-const typed = document.getElementById("typed");
+document.addEventListener('DOMContentLoaded', () => {
+  setYear();
+  initNavbar();
+  initMobileMenu();
+  initSmoothScrollActiveLink();
+  initTypingAnimation();
+  initScrollReveal();
+  initSkillBars();
+  initScrollProgress();
+  initBackToTop();
+  initWhatsAppPlaceholder();
+});
 
-const words = [
-    "Python Developer",
-    "Cloud Engineer",
-    "Web Developer",
-    "Problem Solver"
-];
-
-let wordIndex = 0;
-let charIndex = 0;
-let deleting = false;
-
-
-function type() {
-
-    const currentWord = words[wordIndex];
-
-    if (deleting) {
-
-        charIndex--;
-
-    } else {
-
-        charIndex++;
-
-    }
-
-    typed.textContent =
-        currentWord.slice(0, charIndex);
-
-
-    let speed = deleting
-        ? 55
-        : 90;
-
-
-    /* Finished typing */
-
-    if (
-        !deleting &&
-        charIndex === currentWord.length
-    ) {
-
-        speed = 1300;
-
-        deleting = true;
-    }
-
-
-    /* Finished deleting */
-
-    else if (
-        deleting &&
-        charIndex === 0
-    ) {
-
-        deleting = false;
-
-        wordIndex =
-            (wordIndex + 1) % words.length;
-
-        speed = 350;
-    }
-
-
-    setTimeout(type, speed);
+/* ---------- Footer year ---------- */
+function setYear() {
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 }
 
+/* ---------- Navbar background on scroll ---------- */
+function initNavbar() {
+  const navbar = document.getElementById('navbar');
+  if (!navbar) return;
 
-/* Start typing animation */
-
-type();
-
-
-
-/* ================= NAVBAR ================= */
-
-const navbar =
-    document.getElementById("navbar");
-
-const progress =
-    document.getElementById("progress");
-
-
-window.addEventListener(
-    "scroll",
-    () => {
-
-        const scrollTop =
-            window.scrollY;
-
-        const pageHeight =
-            document.documentElement.scrollHeight -
-            window.innerHeight;
-
-
-        /* Scroll progress */
-
-        const percentage =
-            pageHeight > 0
-                ? (scrollTop / pageHeight) * 100
-                : 0;
-
-
-        progress.style.width =
-            percentage + "%";
-
-
-        /* Navbar background */
-
-        if (scrollTop > 20) {
-
-            navbar.classList.add(
-                "scrolled"
-            );
-
-        } else {
-
-            navbar.classList.remove(
-                "scrolled"
-            );
-        }
-
+  const onScroll = () => {
+    if (window.scrollY > 40) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
     }
-);
+  };
 
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}
 
+/* ---------- Mobile hamburger menu ---------- */
+function initMobileMenu() {
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  if (!toggle || !links) return;
 
-/* ================= MOBILE MENU ================= */
+  toggle.addEventListener('click', () => {
+    const isOpen = links.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
 
-const menuButton =
-    document.getElementById("menuBtn");
+  // Close menu when a link is clicked
+  links.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
 
-const navigation =
-    document.getElementById("nav");
+/* ---------- Active nav link on scroll ---------- */
+function initSmoothScrollActiveLink() {
+  const sections = document.querySelectorAll('main section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  if (!sections.length || !navLinks.length) return;
 
+  const map = new Map();
+  navLinks.forEach((link) => {
+    const id = link.getAttribute('href').replace('#', '');
+    map.set(id, link);
+  });
 
-menuButton.addEventListener(
-    "click",
-    () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const link = map.get(entry.target.id);
+        if (!link) return;
+        if (entry.isIntersecting) {
+          navLinks.forEach((l) => l.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
+    },
+    { rootMargin: '-45% 0px -45% 0px', threshold: 0 }
+  );
 
-        navigation.classList.toggle(
-            "open"
-        );
+  sections.forEach((section) => observer.observe(section));
+}
 
+/* ---------- Hero typing animation ---------- */
+function initTypingAnimation() {
+  const el = document.getElementById('typingText');
+  if (!el) return;
+
+  const roles = ['Python Developer', 'Cloud Engineer', 'Web Developer', 'Problem Solver'];
+  let roleIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
+
+  const TYPE_SPEED = 70;
+  const DELETE_SPEED = 40;
+  const HOLD_TIME = 1400;
+
+  function tick() {
+    const currentRole = roles[roleIndex];
+
+    if (!deleting) {
+      charIndex++;
+      el.textContent = currentRole.slice(0, charIndex);
+
+      if (charIndex === currentRole.length) {
+        deleting = true;
+        setTimeout(tick, HOLD_TIME);
+        return;
+      }
+      setTimeout(tick, TYPE_SPEED);
+    } else {
+      charIndex--;
+      el.textContent = currentRole.slice(0, charIndex);
+
+      if (charIndex === 0) {
+        deleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        setTimeout(tick, 300);
+        return;
+      }
+      setTimeout(tick, DELETE_SPEED);
     }
-);
+  }
 
+  tick();
+}
 
-/* Close menu after clicking link */
+/* ---------- Scroll reveal for .reveal elements ---------- */
+function initScrollReveal() {
+  const items = document.querySelectorAll('.reveal');
+  if (!items.length) return;
 
-document
-    .querySelectorAll("#nav a")
-    .forEach(
-        link => {
-
-            link.addEventListener(
-                "click",
-                () => {
-
-                    navigation.classList.remove(
-                        "open"
-                    );
-
-                }
-            );
-
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // simple stagger based on index within its parent
+          const delay = Math.min(Array.prototype.indexOf.call(entry.target.parentElement.children, entry.target) * 60, 300);
+          entry.target.style.transitionDelay = `${delay}ms`;
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
         }
-    );
+      });
+    },
+    { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
+  );
 
+  items.forEach((item) => observer.observe(item));
+}
 
+/* ---------- Animate skill bar fills when visible ---------- */
+function initSkillBars() {
+  const cards = document.querySelectorAll('.skill-card');
+  if (!cards.length) return;
 
-/* ================= REVEAL ANIMATION ================= */
-
-const revealObserver =
-    new IntersectionObserver(
-        entries => {
-
-            entries.forEach(
-                entry => {
-
-                    if (
-                        entry.isIntersecting
-                    ) {
-
-                        entry.target.classList.add(
-                            "visible"
-                        );
-
-
-                        revealObserver.unobserve(
-                            entry.target
-                        );
-
-                    }
-
-                }
-            );
-
-        },
-        {
-            threshold: 0.12
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const card = entry.target;
+          const level = card.getAttribute('data-level') || '0';
+          const fill = card.querySelector('.skill-bar-fill');
+          if (fill) {
+            requestAnimationFrame(() => {
+              fill.style.width = `${level}%`;
+            });
+          }
+          obs.unobserve(card);
         }
-    );
+      });
+    },
+    { threshold: 0.3 }
+  );
 
+  cards.forEach((card) => observer.observe(card));
+}
 
-document
-    .querySelectorAll(".reveal")
-    .forEach(
-        element => {
+/* ---------- Scroll progress bar ---------- */
+function initScrollProgress() {
+  const bar = document.getElementById('scrollProgress');
+  if (!bar) return;
 
-            revealObserver.observe(
-                element
-            );
+  const onScroll = () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    bar.style.width = `${progress}%`;
+  };
 
-        }
-    );
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+}
 
+/* ---------- Back to top button ---------- */
+function initBackToTop() {
+  const btn = document.getElementById('backToTop');
+  if (!btn) return;
 
-
-/* ================= ACTIVE NAVIGATION ================= */
-
-const sections =
-    document.querySelectorAll(
-        "section[id]"
-    );
-
-const navItems =
-    document.querySelectorAll(
-        "#nav a"
-    );
-
-
-const sectionObserver =
-    new IntersectionObserver(
-        entries => {
-
-            entries.forEach(
-                entry => {
-
-                    if (
-                        entry.isIntersecting
-                    ) {
-
-                        navItems.forEach(
-                            link => {
-
-                                const target =
-                                    link.getAttribute(
-                                        "href"
-                                    );
-
-
-                                link.classList.toggle(
-                                    "active",
-                                    target ===
-                                    "#" + entry.target.id
-                                );
-
-                            }
-                        );
-
-                    }
-
-                }
-            );
-
-        },
-        {
-            rootMargin:
-                "-35% 0px -55% 0px"
-        }
-    );
-
-
-sections.forEach(
-    section => {
-
-        sectionObserver.observe(
-            section
-        );
-
+  const onScroll = () => {
+    if (window.scrollY > 500) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
     }
-);
+  };
 
+  window.addEventListener('scroll', onScroll, { passive: true });
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  onScroll();
+}
 
-
-/* ================= BACK TO TOP ================= */
-
-const topButton =
-    document.getElementById("top");
-
-
-window.addEventListener(
-    "scroll",
-    () => {
-
-        if (
-            window.scrollY > 500
-        ) {
-
-            topButton.classList.add(
-                "show"
-            );
-
-        } else {
-
-            topButton.classList.remove(
-                "show"
-            );
-
-        }
-
-    }
-);
-
-
-topButton.addEventListener(
-    "click",
-    () => {
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    }
-);
-
-
-
-/* ================= CURRENT YEAR ================= */
-
-const year =
-    document.getElementById("year");
-
-
-year.textContent =
-    new Date().getFullYear();
+/* ---------- WhatsApp placeholder handling ----------
+   The real phone number has not been provided. This keeps the
+   contact card visible (per design) but non-functional until a
+   real wa.me link is added by the site owner. */
+function initWhatsAppPlaceholder() {
+  // WhatsApp link is now active - no placeholder needed
+}
