@@ -103,7 +103,7 @@ em { font-style: normal; color: var(--green); }
   align-items: center;
   justify-content: space-between;
   padding: 20px 40px;
-  background: rgba(5, 7, 13, 0.75);
+   background: var(--bg-900);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
